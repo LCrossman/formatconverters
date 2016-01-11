@@ -24,8 +24,9 @@ for line in file:
           continue
      if flag == 1:
           fields = line.split()
+          print fields
           if fields != []:
-                 seq = ''.join(fields[0:6])
+                 seq = ''.join(fields[:(len(fields))-1])
                  outfile.write(seq + '\n')
 
 print "converted %i records"%(i)
