@@ -12,6 +12,7 @@ i = 0
 for line in file:
      if line[0:2] == 'ID':
           AC = line.split()[1].strip()
+          AC = AC[:-1]
           outfile.write('>'+AC+'\n')
           print "converting new record"
           i = i + 1
@@ -24,7 +25,7 @@ for line in file:
      if flag == 1:
           fields = line.split()
           if fields != []:
-                 seq = ''.join(fields[0])
+                 seq = ''.join(fields[0:6])
                  outfile.write(seq + '\n')
 
 print "converted %i records"%(i)
